@@ -1,0 +1,34 @@
+<aura:component controller="GoogleAuthService" implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+  	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="accessToken" type="String" />
+    <aura:attribute name="access" type="String" />
+    <aura:attribute name="fullName" type="String" />
+    <aura:attribute name="email" type="String" />
+    <aura:attribute name="pictureurl" type="String" />
+    <aura:attribute name="locale" type="String" />
+    <aura:attribute name="userInfo" type="String" />
+    
+    
+        <div style="margin:10px">
+    		<lightning:button variant="brand" label="Authorize Google Access" title="Authorize Google Access" onclick="{! c.doAuth }" />		
+        </div>
+        <div style="margin:10px">
+          	  Access Code:
+            <p>{!v.accessToken}</p>
+        </div>
+    <br/>
+    <br/>
+        <div style="margin:10px">
+         <lightning:button variant="brand" label="Get Google User Info" title="Get Google User Info" onclick="{! c.doGetUserInfo }" />
+        </div>    
+
+        <div style="margin:10px">
+            <p>Full Name : {!v.fullName}</p>
+            <p>Email : {!v.email}</p>
+            <p>Locale : {!v.locale}</p>
+            <p>Picture : {!v.pictureurl}</p>
+        	<div style="margin:10px">
+                <img src="{!v.pictureurl}"></img>
+        	</div>           
+        </div>    
+</aura:component>
