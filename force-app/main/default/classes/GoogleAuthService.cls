@@ -7,7 +7,6 @@ public class GoogleAuthService {
     private Static string redirect_uri = 'https://sfdx1-demo-developer-edition.ap17.force.com/customer/s/';
     private static string authUrl='https://accounts.google.com/o/oauth2/auth';
     //Scope of API. It will be API for which you are authenticate 
-   // private static string scope='https://www.googleapis.com/auth/fitness.activity.read';
    private static string scope='https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email'; 
     
    
@@ -81,10 +80,6 @@ public class GoogleAuthService {
 
         responseText = response.getBody();
         
-       // system.debug(responseText);
-   //     Map<String,object> responseMap =(Map<String,object>)JSON.deserializeUntyped(responseText) ;  
-     //   String given_name =  String.valueOf(responseMap.get('given_name'));        
-      //  system.debug(given_name);
         return responseText;
     }    
     
